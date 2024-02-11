@@ -1,0 +1,38 @@
+Node 0 Fatal signal raised sig = Segmentation fault
+ d7a6e430 CX_Primitive_Error
+ 730f0cc0 seh_filter_exe
+ d7ae2fe0 logical_right_shift
+ 6eb8f040 _C_specific_handler
+ 75a32300 _chkstk
+ 759e1070 RtlRaiseException
+ 75a30f20 KiUserExceptionDispatcher
+ d63e3180 Grid_Check
+ d537c170 fluent_fprintf
+ d7accf80 eval
+ d5434870 PRF_Command_Start
+ d5436fa0 PRF_Node_repl
+ d5442db0 Delay_Error
+ d7ae2fe0 logical_right_shift
+ 75117600 BaseThreadInitThunk
+ 759e2680 RtlUserThreadStart
+
+Error [node 0] [time 2/11/24 20:28:33] Abnormal Exit!
+Node 0 Fatal signal raised sig = Segmentation fault
+ d7a6e430 CX_Primitive_Error
+ 730f0cc0 seh_filter_exe
+ d7ae2fe0 logical_right_shift
+ 6eb8f040 _C_specific_handler
+ 75a32300 _chkstk
+ 759e1070 RtlRaiseException
+ 75a30f20 KiUserExceptionDispatcher
+ d63e3180 Grid_Check
+ d537c170 fluent_fprintf
+ d7accf80 eval
+ d5434870 PRF_Command_Start
+ d5436fa0 PRF_Node_repl
+ d5442db0 Delay_Error
+ d7ae2fe0 logical_right_shift
+ 75117600 BaseThreadInitThunk
+ 759e2680 RtlUserThreadStart
+
+Error [node 0] [time 2/11/24 20:29:39] Abnormal Exit!
