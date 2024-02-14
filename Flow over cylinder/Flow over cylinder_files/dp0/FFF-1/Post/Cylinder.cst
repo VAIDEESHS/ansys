@@ -1,4 +1,4 @@
-# State file created:  2024/02/13 12:01:28
+# State file created:  2024/02/14 21:20:45
 # CFX-24.1
 
 COMMENT:User Data
@@ -6,7 +6,7 @@ COMMENT:User Data
   Comment Heading = User Data
   Heading Level = 1
 END
-CONTOUR:Temperature profile
+CONTOUR:Temperature contour
   Apply Instancing Transform = On
   Clip Contour = Off
   Colour Map = Default Colour Map
@@ -16,7 +16,7 @@ CONTOUR:Temperature profile
   Constant Contour Colour = Off
   Contour Range = Global
   Culling Mode = No Culling
-  Domain List = /DOMAIN GROUP:All Domains
+  Domain List = /DOMAIN GROUP:All Cylinder Domains
   Draw Contours = On
   Font = Sans Serif
   Fringe Fill = On
@@ -28,7 +28,7 @@ CONTOUR:Temperature profile
   Location List = symmetry 1
   Max = 0.0 [K]
   Min = 0.0 [K]
-  Number of Contours = 20
+  Number of Contours = 400
   Show Numbers = Off
   Specular Lighting = On
   Surface Drawing = Smooth Shading
@@ -57,17 +57,17 @@ CONTOUR:Temperature profile
     Z = 0.0 [m]
   END
 END
-CONTOUR:Velocity profile
+CONTOUR:Velocity contour
   Apply Instancing Transform = On
   Clip Contour = Off
   Colour Map = Default Colour Map
   Colour Scale = Linear
-  Colour Variable = Velocity
+  Colour Variable = Velocity u
   Colour Variable Boundary Values = Conservative
   Constant Contour Colour = Off
   Contour Range = Global
   Culling Mode = No Culling
-  Domain List = /DOMAIN GROUP:All Domains
+  Domain List = /DOMAIN GROUP:All Cylinder Domains
   Draw Contours = On
   Font = Sans Serif
   Fringe Fill = On
@@ -76,10 +76,10 @@ CONTOUR:Velocity profile
   Line Colour = 0, 0, 0
   Line Colour Mode = Default
   Line Width = 1
-  Location List = symmetry 2
+  Location List = symmetry 1
   Max = 0.0 [m s^-1]
   Min = 0.0 [m s^-1]
-  Number of Contours = 20
+  Number of Contours = 400
   Show Numbers = Off
   Specular Lighting = On
   Surface Drawing = Smooth Shading
@@ -110,19 +110,19 @@ CONTOUR:Velocity profile
 END
 DATA READER:
   Active Case Name = Case Cylinder
-  Append Results = False
+  Append Results = True
   Apply X Offset = false
   Apply Y Offset = false
   Apply Z Offset = false
   Clear All Objects = False
   Construct Variables From Fourier Coefficients = True
   Current Case List = Case Cylinder
-  Current Case Name = C:\Users\Admin\Desktop\Heat transfer enhancement\Flow \
-over cylinder\Flow over cylinder_files\dp0\FFF-1\Fluent\FFF-1.1-1-00038.dat.h5
-  Current Results File = C:\Users\Admin\Desktop\Heat transfer enhancement\Flow \
-over cylinder\Flow over cylinder_files\dp0\FFF-1\Fluent\FFF-1.1-1-00038.dat.h5
+  Current Case Name = D:\VAIDEESH\ANSYS project files\Flow over cylinder\Flow \
+over cylinder_files\dp0\FFF-1\Fluent\FFF-1.1.flprj
+  Current Results File = D:\VAIDEESH\ANSYS project files\Flow over cylinder\\
+Flow over cylinder_files\dp0\FFF-1\Fluent\FFF-1.1.flprj
   Current Timestep = -1
-  Current Timevalue = 0
+  Current Timevalue = 80.01
   Edit Case Names = false
   File Angle Units = rad
   File Chemical Amount Units = kmol
@@ -136,8 +136,10 @@ over cylinder\Flow over cylinder_files\dp0\FFF-1\Fluent\FFF-1.1-1-00038.dat.h5
   Force File Reload = False
   Keep Camera Position = True
   Load Particle Tracks = true
+  Master Results File = D:\VAIDEESH\ANSYS project files\Flow over cylinder\\
+Flow over cylinder_files\dp0\FFF-1\Fluent\FFF-1.1.flprj
   Multi Configuration File Load Option = Single Case
-  Open in New View = True
+  Open in New View = true
   Open to Compare = false
   Reference Acoustic Pressure = 2.0e-5 [Pa]
   Reference Length = 1.0 [m]
@@ -147,13 +149,12 @@ over cylinder\Flow over cylinder_files\dp0\FFF-1\Fluent\FFF-1.1-1-00038.dat.h5
   Timevalue Match Criterion = Same Value
   CASE:Case Cylinder
     Construct Variables From Fourier Coefficients = True
-    Current Case Name = C:\Users\Admin\Desktop\Heat transfer enhancement\Flow \
-over cylinder\Flow over cylinder_files\dp0\FFF-1\Fluent\FFF-1.1-1-00038.dat.h5
-    Current Results File = C:\Users\Admin\Desktop\Heat transfer enhancement\\
-Flow over cylinder\Flow over cylinder_files\dp0\FFF-1\Fluent\FFF-1.1-1-\
-00038.dat.h5
-    Current Timestep = -1
-    Current Timevalue = 0
+    Current Case Name = D:\VAIDEESH\ANSYS project files\Flow over cylinder\\
+Flow over cylinder_files\dp0\FFF-1\Fluent\FFF-1.1.flprj
+    Current Results File = D:\VAIDEESH\ANSYS project files\Flow over cylinder\\
+Flow over cylinder_files\dp0\FFF-1\Fluent\FFF-1.1.flprj
+    Current Timestep = 3810
+    Current Timevalue = 80.01
     File Angle Units = rad
     File Chemical Amount Units = kmol
     File Current Units = A
@@ -385,7 +386,7 @@ Flow over cylinder\Flow over cylinder_files\dp0\FFF-1\Fluent\FFF-1.1-1-\
       Full Circle = Off
       Hub Curve Mode = From Turbo Region
       Inlet Curve Mode = From Turbo Region
-      Inlet Region = /DATA READER/CASE:Case Cylinder/BOUNDARY:inlet
+      Inlet Region = inlet
       Instance Definition = From File
       Linear Blade Aligned Variable Available = false
       Number of Components in 360 = 1
@@ -394,7 +395,7 @@ Flow over cylinder\Flow over cylinder_files\dp0\FFF-1\Fluent\FFF-1.1-1-\
       Number of Passages in 360 = 1
       Number of Passages in Component = 1
       Outlet Curve Mode = From Turbo Region
-      Outlet Region = /DATA READER/CASE:Case Cylinder/BOUNDARY:outlet
+      Outlet Region = outlet
       Principal Axis = Z
       Reflection Plane Option = From Plane
       Rotation Angle = 0 [degree]
@@ -409,6 +410,13 @@ Flow over cylinder\Flow over cylinder_files\dp0\FFF-1\Fluent\FFF-1.1-1-\
       Y = 0.0
       Z = 0.0
     END
+  END
+  CASE COMPARISON:
+    Absolute Value of Difference = false
+    Mode Is Active = false
+    Same Mesh Detection Mode = Auto Detect
+    Synchronize Camera on Activate = true
+    Synchronize Visibility on Activate = true
   END
 END
 DEFAULT INSTANCE TRANSFORM:Default Transform
@@ -439,7 +447,7 @@ DEFAULT LEGEND:Default Legend View 1
   Legend Aspect = 0.07
   Legend Format = %6.3f
   Legend Orientation = Horizontal
-  Legend Plot = /CONTOUR:Temperature profile
+  Legend Plot = /CONTOUR:Temperature contour
   Legend Position = 0.02 , 0.15
   Legend Resolution = 256
   Legend Shading = Smooth
@@ -462,7 +470,7 @@ DEFAULT LEGEND:Default Legend View 2
   Legend Aspect = 0.07
   Legend Format = %10.3e
   Legend Orientation = Vertical
-  Legend Plot = /CONTOUR:Velocity profile
+  Legend Plot = /CONTOUR:Temperature contour
   Legend Position = 0.02, 0.15
   Legend Resolution = 256
   Legend Shading = Smooth
@@ -485,7 +493,7 @@ DEFAULT LEGEND:Default Legend View 3
   Legend Aspect = 0.07
   Legend Format = %10.3e
   Legend Orientation = Vertical
-  Legend Plot = /CONTOUR:Velocity profile
+  Legend Plot = /CONTOUR:Temperature contour
   Legend Position = 0.02, 0.15
   Legend Resolution = 256
   Legend Shading = Smooth
@@ -508,7 +516,7 @@ DEFAULT LEGEND:Default Legend View 4
   Legend Aspect = 0.07
   Legend Format = %10.3e
   Legend Orientation = Vertical
-  Legend Plot = /CONTOUR:Velocity profile
+  Legend Plot = /CONTOUR:Temperature contour
   Legend Position = 0.02, 0.15
   Legend Resolution = 256
   Legend Shading = Smooth
@@ -535,8 +543,8 @@ FILE PROCESSING:
 END
 HARDCOPY:
   Antialiasing = On
-  Hardcopy Filename = C:/Users/Admin/Desktop/Heat transfer enhancement/Flow \
-over cylinder/Flow over cylinder_files/user_files/Temperature profile.png
+  Hardcopy Filename = D:/VAIDEESH/ANSYS project files/Flow over cylinder/Flow \
+over cylinder_files/user_files/Temperature profile.png
   Hardcopy Format = png
   Hardcopy Tolerance = 0.0001
   Image Height = 600
@@ -555,12 +563,12 @@ END
 LIBRARY:
   CEL:
     EXPRESSIONS:
-      Accumulated Time Step = 38
+      Accumulated Time Step = 3810
       Current Phase Position = 0
-      Current Time Step = 38
+      Current Time Step = 3810
       Phase = Current Phase Position
-      Sequence Step = 38
-      Time = 0 [s]
+      Sequence Step = 3810
+      Time = 80.01 [s]
       atstep = Accumulated Time Step
       ctstep = Current Time Step
       sstep = Sequence Step
@@ -1388,18 +1396,18 @@ VIEW:View 1
   Highlight Type = Surface Mesh
   Is A Figure = false
   Light Angle = 50, 110
-  Object Visibility List = /CONTOUR:Temperature profile,/DEFAULT \
-LEGEND:Default Legend View 1,/WIREFRAME:Wireframe
+  Object Visibility List = /CONTOUR:Temperature contour,/DEFAULT \
+LEGEND:Default Legend View 1
   Projection = Orthographic
   Ruler Visibility = true
   Standard View = Isometric Y
   CAMERA:
     Option = Pivot Point and Quaternion
     Pan = 0,0
-    Pivot Point = 0.2,0.02,-7.27596e-12
+    Pivot Point = 0.2,0.02,0.0002
     Rotation = -90, 0, 0
     Rotation Quaternion = 0,0,0,1
-    Scale = 6.10501
+    Scale = 6.39188
     Send To Viewer = True
   END
 END
@@ -1517,5 +1525,5 @@ WIREFRAME:Wireframe
   Line Width = 1
   Number of Contours = 11
   Show Surface Mesh = Off
-  Visibility = On
+  Visibility = Off
 END
